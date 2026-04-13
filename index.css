@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif, monospace;
+}
+
+:root {
+    --blackcolor:rgba(0, 0, 0, 0.759);
+
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--blackcolor);
+    color: white;
+}
+
+.leftHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.midHeader nav {
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+}
+
+.midHeader nav li {
+    list-style: none;
+}
