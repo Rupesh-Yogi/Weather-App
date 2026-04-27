@@ -1,22 +1,39 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif, monospace;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 :root {
-    --blackcolor:rgba(0, 0, 0, 0.759);
+    --homebg:  rgb(210, 233, 241);
+    --text: white;
+    --fontcolor: rgb(183, 195, 54);
+    --aqua: rgb(50, 110, 207);
+    --headerbg: black;
+    --btnbg: rgb(80, 80, 188);
+    --displaycolor:aliceblue;
 
 }
+
+/* Header */
 
 header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    background-color: var(--blackcolor);
-    color: white;
+    background-color: var(--headerbg);
+    color: var(--fontcolor);
+    /* padding: 0.4rem 2rem; */
+    padding: 0.4vh 2vw;
 }
+
 
 .leftHeader {
     display: flex;
@@ -24,7 +41,16 @@ header {
     align-items: center;
 }
 
-.midHeader nav {
+.leftHeader img,
+.leftHeader h1 {
+    cursor: pointer;
+}
+
+.leftHeader:hover {
+    color: var(--aqua);
+}
+
+.midHeader nav ul {
     display: flex;
     gap: 20px;
     font-weight: bold;
@@ -32,4 +58,225 @@ header {
 
 .midHeader nav li {
     list-style: none;
+}
+
+.midHeader nav li:hover {
+    color: var(--aqua);
+    cursor: pointer;
+}
+
+.menu_icon {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: var(--fontcolor);
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    font-weight: bold;
+    display: none;
+}
+
+
+.dark_mode,
+.rightHeader i {
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--fontcolor);
+
+}
+
+.rightHeader button:hover,
+.rightHeader i:hover {
+    background-color: grey;
+}
+
+.navBar {
+    position: relative;
+    top: 30px;
+}
+
+
+/* Dark Mode */
+
+body.dark {
+    --homebg: #0f1923;
+    --displaycolor: #1e2d3d;
+    background-color: var(--homebg);
+    color: var(--text);
+}
+
+/* Home */
+
+.Home {
+    background-color: var(--homebg);
+    height: 87vh;
+}
+
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    gap: 10px;
+}
+
+.search input {
+    padding: 14px 18vw 14px 6px;
+    border-radius: 12px;
+
+}
+
+.search i {
+    background-color: var(--btnbg);
+    font-size: 20px;
+    padding: 13px;
+    width: 60px;
+    border-radius: 8px;
+    color: var(--text);
+}
+
+.display {
+    display: grid;
+    grid-template-columns: 5% 5%;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 0 90px;
+}
+
+.degree {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: 1/3;
+    background-color: var(--displaycolor);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.degree .number {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.number .placeName {
+    color: var(--aqua);
+    font-weight: bold;
+}
+
+.degree img {
+    height: 13vh;
+    width: 6vw;
+    background: none;
+    border: none;
+}
+
+
+.humidity,
+.wind,
+.pressure,
+.UV {
+    background-color: var(--displaycolor);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 85px;
+    margin-top: 40px;
+}
+
+.footer nav ul li {
+    list-style: none;
+    font-weight: bold;
+}
+
+.footer nav ul li a {
+    text-decoration: none;
+
+}
+
+@media (max-width:695px) {
+
+    .Home {
+        height: fit-content;
+    }
+
+    :root {
+        --color: rgb(231, 227, 227);
+
+    }
+
+
+    /* For Header  */
+
+    .leftHeader h1 {
+        font-size: 20px;
+    }
+
+
+    .midHeader nav ul {
+        display: none;
+    }
+
+    .midHeader .navBar {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 67px;
+        left: 0;
+        padding: 4px 6px;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .midHeader .navBar li {
+        padding: 10px;
+        font-size: 20px;
+        background-color: var(--color);
+        border-radius: 8px;
+    }
+
+    .menu_icon {
+        display: block;
+
+    }
+
+    .rightHeader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .display {
+        margin: 0 34px;
+    }
+
+    .degree img {
+        height: 10vh;
+        width: 10vw;
+    }
+
+    .footer nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 20px;
+        /* margin-bottom: 9px; */
+    }
 }
