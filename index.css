@@ -117,7 +117,7 @@ body.dark {
 
 .Home {
     background-color: var(--homebg);
-    height: 87vh;
+    min-height: 87vh;
 }
 
 
@@ -238,11 +238,12 @@ body.dark {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 67px;
+        top: 89px;
         left: 0;
         padding: 4px 6px;
         width: 100%;
         gap: 8px;
+        background-color: var(--homebg);
     }
 
     .midHeader .navBar li {
