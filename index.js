@@ -1,4 +1,4 @@
-
+// Load header 
 
 fetch("/components/header.html")
   .then((res) => res.text())
@@ -29,17 +29,76 @@ fetch("/components/header.html")
     }
   });
 
-fetch("/components/footer.html")       // fetches the data
-  .then((res) => res.text())           // converts into text
-  .then((data) => {                    // stores result into data variable 
+
+  // loads footer
+
+fetch("/components/footer.html") // fetches the data
+  .then((res) => res.text()) // converts into text
+  .then((data) => {
+    // stores result into data variable
     document.querySelector(".footer").innerHTML = data;
   });
 
 
 
-  //////////////////////////////////////////
+  // Fetches API
 
-//   const API_KEY = "4a37fc286f3cf9d329d053c8bcea3f3c";
+const API_KEY = "4a37fc286f3cf9d329d053c8bcea3f3c";
+
+const searchInput = document.querySelector(".search input");
+const searchIcon = document.querySelector(".search i");
+
+// Click search icon
+searchIcon.addEventListener("click", () => {
+  const city = searchInput.value.trim();
+  if (city) getWeather(city);
+});
+
+// Press Enter key
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    const city = searchInput.value.trim();
+    if (city) getWeather(city);
+  }
+});
+
+async function getWeather(city) {
+  try {
+    const res = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+    );
+
+    if (!res.ok) throw new Error("City not found!");
+
+    const data = await res.json();
+
+    document.querySelector(".placeName").textContent =
+      `${data.name}, ${data.sys.country}`;
+
+    document.querySelector(".degree .number h1").textContent =
+      `${Math.round(data.main.temp)}°`;
+
+    document.querySelector(".degree .number p:last-child").textContent =
+      `${data.weather[0].main}, Feels ${Math.round(data.main.feels_like)}°`;
+
+    document.querySelector(".humidity h2").textContent =
+      `${data.main.humidity}%`;
+
+    document.querySelector(".wind h2").textContent = `${data.wind.speed} m/s`;
+
+    document.querySelector(".pressure h2").textContent =
+      `${data.main.pressure} hPa`;
+
+  } catch (err) {
+    alert(err.message);
+  }
+}
+
+
+//////////////////////////////////////////
+
+
+// const API_KEY = "4a37fc286f3cf9d329d053c8bcea3f3c";
 
 // // Load Header
 // fetch("/components/header.html")
@@ -103,58 +162,11 @@ fetch("/components/footer.html")       // fetches the data
 //     document.querySelector(".humidity h2").textContent =
 //       `${data.main.humidity}%`;
 
-//     document.querySelector(".wind h2").textContent =
-//       `${data.wind.speed} m/s`;
+//     document.querySelector(".wind h2").textContent = `${data.wind.speed} m/s`;
 
 //     document.querySelector(".pressure h2").textContent =
 //       `${data.main.pressure} hPa`;
-
 //   } catch (err) {
 //     alert(err.message);
 //   }
 // }
-
-// // Click search icon
-// searchIcon.addEventListener("click", () => {
-//   const city = searchInput.value.trim();
-//   if (city) getWeather(city);
-// });
-
-// // Press Enter key
-// searchInput.addEventListener("keydown", (e) => {
-//   if (e.key === "Enter") {
-//     const city = searchInput.value.trim();
-//     if (city) getWeather(city);
-//   }
-// });
-
-
-const searchInput = document.querySelector(".search input");
-const searchIcon = document.querySelector(".search i")
-
-searchIcon.addEventListener("click", ()=> {
-  const city = searchInput.value.trim();
-  if(city) getWeather(city);
-})
-
-searchInput.addEventListener("keydown", (e)=> {
-  if(e.key == "Enter"){
-    const city = searchInput.value.trim();
-    if(city) getWeather(city);
-  }
-
-})
-
-async function getWeather(city) {
-  try{
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
-
-    if(!res.ok) throw new error("City not found!");
-
-    const data = await res.json(); 
-
-
-    document.querySelector()
-    
-  }
-}

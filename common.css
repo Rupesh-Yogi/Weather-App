@@ -1,0 +1,139 @@
+:root {
+    --homebg: rgb(210, 233, 241);
+    --text: white;
+    --fontcolor: rgb(183, 195, 54);
+    --aqua: rgb(50, 110, 207);
+    --headerbg: black;
+    --btnbg: rgb(80, 80, 188);
+    --displaycolor: aliceblue;
+
+}
+
+body {
+    animation: fadeIn 0.1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--headerbg);
+    color: var(--fontcolor);
+    /* padding: 0.4rem 2rem; */
+    padding: 0.4vh 2vw;
+}
+
+
+.leftHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftHeader img,
+.leftHeader h1 {
+    cursor: pointer;
+}
+
+.leftHeader:hover {
+    color: var(--aqua);
+}
+
+.midHeader nav ul {
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+}
+
+.midHeader nav li {
+    list-style: none;
+}
+
+.midHeader nav li a {
+    text-decoration: none;
+    color: var(--fontcolor);
+}
+
+.midHeader nav li:hover {
+    color: var(--aqua);
+    cursor: pointer;
+}
+
+.menu_icon {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: var(--fontcolor);
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    font-weight: bold;
+    display: none;
+}
+
+
+.dark_mode,
+.rightHeader i {
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--fontcolor);
+
+}
+
+.rightHeader button:hover,
+.rightHeader i:hover {
+    background-color: grey;
+}
+
+.navBar {
+    position: relative;
+    top: 30px;
+}
+
+
+/* Dark Mode */
+
+body.dark {
+    --homebg: #0f1923;
+    --displaycolor: #1e2d3d;
+    background-color: var(--homebg);
+    color: var(--text);
+}
+
+footer nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 85px;
+    margin-top: 40px;
+}
+
+.footer nav ul li {
+    list-style: none;
+    font-weight: bold;
+}
+
+.footer nav ul li a {
+    text-decoration: none;
+
+}
