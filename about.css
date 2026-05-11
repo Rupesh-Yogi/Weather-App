@@ -12,18 +12,20 @@ body {
     scroll-behavior: smooth;
 }
 
-body{
-    background-color: var(--homebg);
-}
 
 
 :root {
     --homebg: rgb(210, 233, 241);
+    --text: white;
+    --fontcolor: rgb(183, 195, 54);
+    --aqua: rgb(50, 110, 207);
+    --headerbg: black;
+    --btnbg: rgb(80, 80, 188);
+    --displaycolor: aliceblue;
 }
 
 .hero {
     background-color: var(--homebg);
-    /* height: 80px; */
     padding: 30px;
 }
 
@@ -35,7 +37,7 @@ body{
 .mainContent {
     display: flex;
     gap: 40px;
-    background-color: aliceblue;
+    background-color: var(--displaycolor);
 }
 
 .left {
@@ -75,3 +77,38 @@ nav ul li i {
     font-size: 20px;
 }
 
+.footer{
+    background-color: var(--homebg);
+    padding: 50px;
+}
+
+@media (max-width:600px){
+
+
+    .hero h1 {
+        font-size: 25px;
+    }
+
+    .first h2 {
+        font-size: 20px;
+    }
+
+
+/* 
+    .mainContent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .first{
+        order: 0;
+    }
+
+    .right{
+        order: 2;
+    }
+
+    .second{
+        order: 3;
+    } */
+}
