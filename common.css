@@ -38,7 +38,6 @@ header {
     align-items: center;
     background-color: var(--headerbg);
     color: var(--fontcolor);
-    /* padding: 0.4rem 2rem; */
     padding: 0.4vh 2vw;
 }
 
@@ -144,89 +143,16 @@ body.dark {
 
 }
 
-
-
 @media (max-width:695px) {
-
-
-
-    .Home {
-        height: fit-content;
+        .footer nav ul {
+      display: flex; 
+      flex-direction: column; 
+      justify-content: space-around;
+      gap:18px
     }
 
-    :root {
-        --color: rgb(231, 227, 227);
-
-    }
-
-
-    /* For Header  */
-
-    .leftHeader h1 {
-        font-size: 20px;
-    }
-
-
-    .midHeader nav ul {
-        display: none;
-    }
-
-    .midHeader .navBar {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 89px;
-        left: 0;
-        padding: 4px 6px;
-        width: 100%;
-        gap: 8px;
-        background-color: var(--homebg);
-    }
-
-    .midHeader .navBar li {
-        padding: 10px;
-        font-size: 20px;
-        background-color: var(--color);
-        border-radius: 8px;
-    }
-
-    .menu_icon {
-        display: block;
-
-    }
-
-    .rightHeader {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .display {
-        margin: 0 34px;
-    }
-
-    .degree img {
-        height: 10vh;
-        width: 10vw;
-    }
-
-    .footer nav ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 85px;
-    /* margin-top: 40px; */
+    .footer nav ul li {
+    font-size: 20px;
+}
 }
 
-
-/* .footer nav ul li {
-    list-style: none;
-    font-weight: bold;
-}
-
-.footer nav ul li a {
-    text-decoration: none;
-
-} */
-
-}
