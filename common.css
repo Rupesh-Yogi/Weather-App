@@ -144,6 +144,51 @@ body.dark {
 }
 
 @media (max-width:695px) {
+     
+    /* For Header  */
+
+
+        .leftHeader h1 {
+        font-size: 20px;
+    }
+
+
+    .midHeader nav ul {
+        display: none;
+    }
+
+    .midHeader .navBar {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 89px;
+        left: 0;
+        padding: 4px 6px;
+        width: 100%;
+        gap: 8px;
+        background-color: var(--homebg);
+    }
+
+    .midHeader .navBar li {
+        padding: 10px;
+        font-size: 20px;
+        background-color: var(--color);
+        border-radius: 8px;
+    }
+
+    .menu_icon {
+        display: block;
+
+    }
+
+    .rightHeader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* For Footer  */
+
         .footer nav ul {
       display: flex; 
       flex-direction: column; 

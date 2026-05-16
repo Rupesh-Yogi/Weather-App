@@ -26,64 +26,70 @@ body {
 
 .hero {
     background-color: var(--homebg);
-    padding: 30px;
+    padding: 30px 60px;
 }
 
-.right img {
+.showPicture img {
     width: 40vw;
     height: 50vh;
 }
 
 .mainContent {
-    display: flex;
-    gap: 40px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 2fr 1fr;
     background-color: var(--displaycolor);
+    padding: 30px 60px;
 }
 
-.left {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.showPicture {
+    grid-row: 1/3;
+    grid-column: 2/3;
+
 }
 
-.first {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 30px;
-}
-
-.second {
+.description {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-left: 30px;
 }
 
-nav ul li {
+.keyFeatures nav ul {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.keyFeatures h2 {
+    margin: 10px;
+}
+
+.keyFeatures nav ul li {
     list-style: none;
-    gap: 10px;
 }
 
-.second nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.keyFeatures nav ul li i {
+    color: var(--aqua);
+    font-size: 18px;
+    margin: 3px;
 }
 
-nav ul li i {
-    color: rgb(76, 92, 245);
-    font-size: 20px;
+.footer {
+    margin-bottom: 20px;
 }
 
-.footer{
-    background-color: var(--homebg);
-    padding: 50px;
-}
 
-@media (max-width:600px){
 
+@media (max-width:695px) {
+
+    .hero {
+        padding: 20px;
+    }
+
+    p {
+        font-size: 20px;
+    }
 
     .hero h1 {
         font-size: 25px;
@@ -93,22 +99,33 @@ nav ul li i {
         font-size: 20px;
     }
 
-
-/* 
     .mainContent {
         display: flex;
         flex-direction: column;
+        padding: 35px;
     }
 
-    .first{
-        order: 0;
-    }
 
-    .right{
+    .showPicture {
         order: 2;
     }
 
-    .second{
+    .showPicture img {
+          width: 90vw;
+    height: 55vh;
+    }
+
+    .description {
+        order: 1;
+    }
+
+    .keyFeatures {
         order: 3;
-    } */
+    }
+
+
+.keyFeatures nav ul {
+    padding: 0px;
+}
+
 }
