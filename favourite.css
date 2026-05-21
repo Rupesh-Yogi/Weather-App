@@ -1,0 +1,21 @@
+.hero {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 30px;
+}
+
+.favouriteCities {
+    background-color: rgb(219, 231, 234);
+    height: 60vh;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.errorMessage {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}

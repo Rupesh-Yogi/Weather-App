@@ -17,6 +17,8 @@
 
 body {
     animation: fadeIn 0.1s ease;
+        background: var(--homebg);
+
 }
 
 @keyframes fadeIn {

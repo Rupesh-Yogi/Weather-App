@@ -68,7 +68,7 @@ const favData = JSON.parse(localStorage.getItem("favourites")) || [];
         alert("Already added to favourite list.");
   }else{
     favData.push(cityName);
-    localStorage.setItem("favourites", JSON.stringify(cityName));
+    localStorage.setItem("favourites", JSON.stringify(favData));
     favouriteIcon.style.color = "blue";
   }
 
