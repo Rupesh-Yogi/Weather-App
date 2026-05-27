@@ -45,7 +45,7 @@ if (favCityList.length === 0) {
 
     view.addEventListener("click", ()=> {
 
-      localStorage.setItem("viewCity", JSON.stringify(element));
+      localStorage.setItem("viewCity", (element));
       document.location.href = "/index.html";
 
     })
