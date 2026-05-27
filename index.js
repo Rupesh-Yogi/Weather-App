@@ -73,3 +73,13 @@ const favData = JSON.parse(localStorage.getItem("favourites")) || [];
   }
 
 })
+
+// To update the content in index page when the view button is clicked on favourite page
+
+ const cityDetails = JSON.parse(localStorage.getItem("viewCity"));
+
+if(viewCity){
+  getWeather(city);
+
+  localStorage.removeItem("viewCity")
+}
