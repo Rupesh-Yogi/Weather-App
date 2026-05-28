@@ -1,3 +1,5 @@
+
+
 .hero {
     text-align: center;
     font-weight: bold;
@@ -6,14 +8,16 @@
 }
 
 .favouriteCities {
-    background-color: rgb(219, 231, 234);
+    background-color: var(--homebg);
     height: 60vh;
     align-self: center;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; tries to 
+    center the list of cities and breaks the layout*/ 
     align-items: center;
     flex-direction: column;
     gap: 20px;
+    overflow-y: auto;
 }
 
 .showCities {
@@ -21,7 +25,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 35vw;
-    background-color: aliceblue;
+    background-color: var(--displaycolor);
     width: 60vw;
     height: 80px;
     padding: 30px;
@@ -44,4 +48,22 @@
     text-align: center;
     font-weight: bold;
     font-size: 20px;
+}
+
+@media (max-width:695px) {
+
+    .favouriteCities {
+        gap: 20px;
+        height: 50vh;
+    }
+
+    .showCities {
+        gap: 10vw;
+        width: 80vw;
+    }
+
+    .buttonsForCities {
+        gap: 10px;
+    }
+
 }
