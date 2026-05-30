@@ -18,7 +18,7 @@
 
 body {
     animation: fadeIn 0.1s ease;
-        background: var(--homebg);
+    background: var(--homebg);
 
 }
 
@@ -50,6 +50,11 @@ header {
     justify-content: center;
     align-items: center;
 }
+
+    .leftHeader a {
+        text-decoration: none;
+        color: var(--fontcolor);
+    }
 
 .leftHeader img,
 .leftHeader h1 {
@@ -154,6 +159,7 @@ body.dark {
         .leftHeader h1 {
         font-size: 20px;
     }
+
 
 
     .midHeader nav ul {

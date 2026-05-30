@@ -38,3 +38,4 @@ fetch("/components/footer.html") // fetches the data
     // stores result into data variable
     document.querySelector(".footer").innerHTML = data;
   });
+

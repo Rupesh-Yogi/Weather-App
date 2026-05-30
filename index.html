@@ -1,82 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
-    <link rel="icon" href="/Resources/favicon.webp">
-    <link rel="stylesheet" href="/common.css">
-    <link rel="stylesheet" href="index.css">
-    <script src="/index.js" defer></script>
-    <script src="/common.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather</title>
+        <link rel="icon" href="/Resources/favicon.webp">
+        <link rel="stylesheet" href="/common.css">
+        <link rel="stylesheet" href="index.css">
+        <script src="/index.js" defer></script>
+        <script src="/common.js" defer></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    </head>
 
 
-<body>
+    <body>
 
-    <header class="header"> </header>
+        <header class="header"> </header>
 
-    <main class="Home">
-        <div class="search">
-            <input type="text" placeholder="Search Places here">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
+        <main class="Home">
+            <div class="search">
+                <input type="text" placeholder="Search Places here">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
 
-        <div class="display">
+            <div class="display">
 
-            <div class="degree">
-                <div class="number">
-                    <p class="placeName">Sydney, Australia</p>
-                    <h1>26&deg</h1>
-                    <p>Sunny, Feels 25&deg</p>
+                <div class="degree">
+                    <div class="number">
+                        <p class="placeName">Sydney, Australia</p>
+                        <h1>26&deg</h1>
+                        <p>Sunny, Feels 25&deg</p>
+                    </div>
+
+                    <div class="cloudImage">
+                        <figure> <img src="/Resources/Display_cloud.png" alt="Icon of Cloud">
+                            <figcaption>starned &hearts;</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="sunImage">
+                        <img src="/Resources/display_sun.png" alt="Icon of Sun">
+                        <i class="fa fa-heart favIcon"></i>
+                    </div>
                 </div>
 
-                <div class="cloudImage">
-                    <figure> <img src="/Resources/Display_cloud.png" alt="Icon of Cloud">
-                        <figcaption>starned &hearts;</figcaption>
-                    </figure>
+                <div class="humidity">
+                    <i class="fa-solid fa-droplet"></i>
+                    <p>Humidity</p>
+                    <h2>48%</h2>
                 </div>
 
-                <div class="sunImage">
-                    <img src="/Resources/display_sun.png" alt="Icon of Sun">
-                    <i class="fa fa-heart favIcon"></i>
+                <div class="wind">
+                    <i class="fa-solid fa-wind"></i>
+                    <p>Wind Speed</p>
+                    <h2>6.3 m/s</h2>
+                </div>
+
+                <div class="pressure">
+                    <i class="fa-solid fa-gauge"></i>
+                    <p>Pressure</p>
+                    <h2>1013 hPa</h2>
+                </div>
+
+                <div class="UV">
+                    <i class="fa-solid fa-sun"></i>
+                    <p>UV Index</p>
+                    <h2>High 7</h2>
                 </div>
             </div>
 
-            <div class="humidity">
-                <i class="fa-solid fa-droplet"></i>
-                <p>Humidity</p>
-                <h2>48%</h2>
-            </div>
 
-            <div class="wind">
-                <i class="fa-solid fa-wind"></i>
-                <p>Wind Speed</p>
-                <h2>6.3 m/s</h2>
-            </div>
-
-            <div class="pressure">
-                <i class="fa-solid fa-gauge"></i>
-                <p>Pressure</p>
-                <h2>1013 hPa</h2>
-            </div>
-
-            <div class="UV">
-                <i class="fa-solid fa-sun"></i>
-                <p>UV Index</p>
-                <h2>High 7</h2>
-            </div>
-        </div>
+            <footer class="footer"></footer>
 
 
-        <footer class="footer"></footer>
+        </main>
 
 
-    </main>
+    </body>
 
-
-</body>
-
-</html>
+    </html>

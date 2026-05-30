@@ -1,4 +1,3 @@
-// document.location.reload();
 
 const favCityList = JSON.parse(localStorage.getItem("favourites")) || [];
 

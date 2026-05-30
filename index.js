@@ -1,7 +1,4 @@
-
-
-
-  // Fetches API
+// Fetches API
 
 const API_KEY = "4a37fc286f3cf9d329d053c8bcea3f3c";
 
@@ -25,7 +22,7 @@ searchInput.addEventListener("keydown", (e) => {
 async function getWeather(city) {
   try {
     const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`,
     );
 
     if (!res.ok) throw new Error("City not found!");
@@ -34,6 +31,8 @@ async function getWeather(city) {
 
     document.querySelector(".placeName").textContent =
       `${data.name}, ${data.sys.country}`;
+
+      updateFavIcon(); 
 
     document.querySelector(".degree .number h1").textContent =
       `${Math.round(data.main.temp)}°`;
@@ -48,37 +47,52 @@ async function getWeather(city) {
 
     document.querySelector(".pressure h2").textContent =
       `${data.main.pressure} hPa`;
-
   } catch (err) {
     alert(err.message);
   }
 }
 
-//  For the favourite Icon 
+//  For the favourite Icon
 
 const favouriteIcon = document.querySelector(".favIcon"); // favourite icon
 
+favouriteIcon.addEventListener("click", () => {
+  const cityName = document.querySelector(".placeName").textContent; // value as a city name in display
+  const favData = JSON.parse(localStorage.getItem("favourites")) || [];
 
-favouriteIcon.addEventListener("click", ()=> {
-
-const cityName = document.querySelector(".placeName").textContent; // value as a city name in display
-const favData = JSON.parse(localStorage.getItem("favourites")) || [];
-
-  if(favData.includes(cityName)){
-        alert("Already added to favourite list.");
-  }else{
+  if (favData.includes(cityName)) {
+    alert("Already added to favourite list.");
+  } else {
     favData.push(cityName);
     localStorage.setItem("favourites", JSON.stringify(favData));
-    favouriteIcon.style.color = "blue";
   }
 
-})
+  updateFavIcon();
+});
 
-// To update the content in index page when the view button is clicked on favourite page
 
- const cityDetails = localStorage.getItem("viewCity");
+function updateFavIcon(){
+  const cityName = document.querySelector(".placeName").textContent;
+  const favData = JSON.parse(localStorage.getItem("favourites")) || [];
 
-if(cityDetails){
+    if (favData.includes(cityName)) {
+    favouriteIcon.style.color = "blue";
+  } else {
+    favouriteIcon.style.color = "";
+  }
+}
+
+window.addEventListener("load", () => {
+  updateFavIcon();
+});
+
+
+// To update the content in index page when the view
+//  button is clicked on favourite page
+
+const cityDetails = localStorage.getItem("viewCity");
+
+if (cityDetails) {
   getWeather(cityDetails);
-  localStorage.removeItem("viewCity");  
+  localStorage.removeItem("viewCity");
 }
