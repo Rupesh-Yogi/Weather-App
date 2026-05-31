@@ -10,6 +10,7 @@
     <link rel="icon" href="Resources\favicon.webp">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="common.js" defer></script>
+    <script src="form.js" defer></script>
 </head>
 
 <body>
@@ -21,18 +22,21 @@
     <main class="formContent">
         <div class="formDetails">
             <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Enter your name" required>
+            <input class="userInput" id="name" type="text" placeholder="Enter your name" required>
+            <p class="error" id="nameError"></p>
 
             <label for="email">Email</label>
-            <input id="email" type="text" placeholder="Enter your Email" required>
+            <input class="userInput" id="email" type="text" placeholder="Enter your Email" required>
+            <p class="error" id="emailError"></p>
 
             <label for="message">Message</label>
-            <textarea name="text" id="message" placeholder="leave a message"></textarea>
+            <textarea class="userInput" name="text" id="message" placeholder="leave a message"></textarea>
+            <p class="error" id="textError"></p>
 
         </div>
 
         <div class="formSubmit">
-            <button type="submit">Send Message</button>
+            <button type="submit">Submit</button>
         </div>
 
     </main>
