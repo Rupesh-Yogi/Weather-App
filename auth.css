@@ -1,9 +1,19 @@
 .authContainer {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--displaycolor);
+    height: 80vh;
+    margin: 70px 70vh;
+    flex-direction: column;
+    border-radius: 8px;
 }
 
-.loginForm {
 
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .authTop {
@@ -13,3 +23,61 @@
     flex-direction: column;
     gap: 20px;
 }
+
+.loginText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.openBracket {
+    font-size: 30px;
+    height: 60px;
+    width: 60px;
+    background-color: var(--aqua);
+    border-radius: 50px;
+    padding: 15px;
+
+}
+
+.loginBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25vw;
+    gap: 5px;
+    padding: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--aqua);
+    color: var(--displaycolor);
+    border-radius: 6px;
+
+}
+
+.authFields {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 25vw;
+}
+
+.authInput {
+    padding: 8px;
+    font-size: 15px;
+    border-radius: 6px;
+}
+
+.registerForm {
+    margin: 40px;
+}
+
+.registerForm a {
+    text-decoration: none;
+    color: var(--aqua);
+    font-weight: bold;
+}
+
