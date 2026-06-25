@@ -10,11 +10,14 @@
     <link rel="stylesheet" href="auth.css">
     <link rel="icon" href="Resources\favicon.webp">
     <!-- <script src="common.js" defer></script> -->
+     <script src="auth.js" defer></script>
 </head>
 
 <body>
 
     <div class="authContainer">
+
+        <!-- login Form -->
 
         <div class="loginForm">
 
@@ -33,24 +36,72 @@
 
             <div class="authFields">
                 <label for="email">Email</label>
-                <input class="authInput" type="text" required placeholder="Enter your email"
-                    data-error="Please enter your email" data-error-id="loginEmailError">
+                <input id="logEmail" class="authInput loginInput" type="email" required placeholder="Enter your email"
+                    data-login-error="Please enter your email" data-login-error-id="loginEmailError">
+                <p class="error" id="loginEmailError"></p>
+
 
                 <label for="password">Password</label>
-                <input class="authInput" type="password" required data-error="Please enter your password"
-                    data-error-id="loginPasswordError" placeholder="Enter your password">
+                <input id="logPassword" class="authInput loginInput" type="password" required data-login-error="Please enter your password"
+                    data-login-error-id="loginPasswordError" placeholder="Enter your password">
+                <p class="error" id="loginPasswordError"></p>
 
             </div>
 
-            <button class="loginBtn">
+            <button class="loginBtn" id="loginBtn">
                 <i class="fa-solid fa-right-to-bracket"></i>
                 <p>Login</p>
             </button>
+
+           <div class="registerText">
+            <p>Don't have account?
+                <span class="goToRegister">Register here</span>
+            </p>
+           </div>
         </div>
 
-        <div class="registerForm">
-            <p>Don't have account? <a href="">Register here</a></p>
+        <!-- Register Form -->
+
+        <div class="registerForm" style="display: none;">        
+        <!-- <div class="registerForm">         -->
+
+            <div class="authTop">
+                <div class="registerIcon">
+                <i class="fa-solid fa-user-plus openBracket"></i>
+                </div>
+
+                <div class="goToRegisterText">
+                    <h2>Register</h2>
+                    <p>Create your account to get started.</p>
+                </div>
+            </div>
+
+            <div class="authFields">
+                <label for="regEmail">Email</label>
+                <input class="authInput registerInput registerEmail" type="email" required data-register-error-id="regErrorEmail"
+                    placeholder="Enter your email" data-register-error="please enter your email">
+                <p class="error" id="regEmailError"></p>
+
+                <label for="regPassword">Password</label>
+                <input class="authInput registerInput registerPass" type="password" required placeholder="Create a password"
+                    data-register-error="Please create your password" data-register-error-id="regPassError">
+                <p class="error" id="regPassError"></p>
+            </div>
+
+            <button class="loginBtn" id="registerBtn">
+                <i class="fa-solid fa-user-plus "></i>
+                <p>Register</p>
+            </button>
+
+            <div class="toggleForm">
+                <p>Already have an account?
+                    <span id="goToLogin" class="goToLogin">Login here</span>
+                </p>
+
+            </div>
         </div>
+
+
 
     </div>
 

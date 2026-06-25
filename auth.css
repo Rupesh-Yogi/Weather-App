@@ -3,18 +3,21 @@
     justify-content: center;
     align-items: center;
     background-color: var(--displaycolor);
-    height: 80vh;
-    margin: 70px 70vh;
+    margin: 70px auto;
+    max-width: 500px;
     flex-direction: column;
     border-radius: 8px;
+    padding: 40px 20px;
 }
 
 
-.loginForm {
+.loginForm,
+.registerForm {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 
 .authTop {
     display: flex;
@@ -24,7 +27,9 @@
     gap: 20px;
 }
 
-.loginText {
+
+.loginText,
+.goToRegisterText {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,7 +59,7 @@
     background-color: var(--aqua);
     color: var(--displaycolor);
     border-radius: 6px;
-
+    cursor: pointer;
 }
 
 .authFields {
@@ -71,13 +76,40 @@
     border-radius: 6px;
 }
 
-.registerForm {
+.registerText {
     margin: 40px;
 }
 
-.registerForm a {
-    text-decoration: none;
-    color: var(--aqua);
+.registerText span,
+.toggleForm span {
     font-weight: bold;
+    color: var(--aqua);
 }
 
+.toggleForm {
+    margin: 30px;
+}
+
+.goToRegister,
+.goToLogin {
+    cursor: pointer;
+}
+
+.error {
+    color: var(--errorText);
+}
+
+@media (max-width:695px) {
+
+    .authContainer {
+        margin: 40px 30px;
+        padding: 50px
+    }
+
+    .authFields,
+    .loginBtn,
+    .loginText p {
+        width: 90%;
+    }
+
+}
