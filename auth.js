@@ -118,11 +118,10 @@ registerBtn.addEventListener("click", () => {
 
       // To redirect to Login Page
 
-      const registerPage = document.querySelector(".registerForm");
-      const loginPage = document.querySelector(".loginForm");
-
-      registerPage.style.display = "none";
-      loginPage.style.display = "block";
+      setTimeout(() => {
+        registerPage.style.display = "none";
+        loginPage.style.display = "block";
+      }, 1000);
     }
   }
 });
