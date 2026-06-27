@@ -1,6 +1,6 @@
 // Load header 
 
-fetch("/components/header.html")
+fetch("components\footer.html")
   .then((res) => res.text())
   .then((data) => {
     document.querySelector(".header").innerHTML = data;
@@ -32,7 +32,7 @@ fetch("/components/header.html")
 
   // loads footer
 
-fetch("/components/footer.html") // fetches the data
+fetch("components\footer.html") // fetches the data
   .then((res) => res.text()) // converts into text
   .then((data) => {
     // stores result into data variable
