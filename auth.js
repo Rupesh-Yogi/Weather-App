@@ -4,8 +4,6 @@ const loginPage = document.querySelector(".loginForm");
 const gotoRegisterPage = document.querySelector(".goToRegister");
 const goToLoginPage = document.querySelector(".goToLogin");
 const registerPage = document.querySelector(".registerForm");
-// const registerEmail = document.querySelector(".registerEmail");
-// const registerPass = document.querySelector(".registerPass");
 
 // To go to Register Page
 
@@ -23,12 +21,10 @@ goToLoginPage.addEventListener("click", () => {
 
 // Logic for Login Page
 
-const userDetails = JSON.parse(localStorage.getItem("detailsOfUser")) || [{}];
-const loginBtn = document.querySelector(".loginBtn");
+const loginBtn = document.querySelector("#loginBtn");
 const loginInput = document.querySelectorAll(".loginInput");
 
 loginBtn.addEventListener("click", () => {
-
   let isValid = true;
 
   loginInput.forEach((element) => {
@@ -41,70 +37,92 @@ loginBtn.addEventListener("click", () => {
       loginErrorElement.textContent = loginDataError;
     } else {
       loginErrorElement.textContent = "";
-    } 
+    }
   });
+
+  if (isValid) {
+    const userEnteredEmail = document.querySelector("#logEmail").value.trim();
+    const userEnteredPass = document.querySelector("#logPassword").value.trim();
+    const userDetails = JSON.parse(localStorage.getItem("detailsOfUser")) || [];
+    const savedUserEmail = userDetails.find((e) => e.email == userEnteredEmail);
+
+    // ------- OPTIONAL CODE -------------{
+
+    // if (userEnteredEmail == savedUserEmail) {
+    //   if (savedUserEmail.password == userEnteredPass) {
+    //     alert("Login Successfull");
+    //   } else {
+    //     alert("Password Incorrect");
+    //   }
+    // } else {
+    //   alert("User donot found. Please register first!");
+    // }
+
+    // }
+
+    if (!savedUserEmail) {
+      alert("User donot found. Please register first!");
+    } else if (savedUserEmail.password == userEnteredPass) {
+      alert("Login Successfull");
+      document.location.href = "index.html";
+    } else {
+      alert("Password Incorrect");
+    }
+  }
 });
 
-// Variables For login page
+// Logic For Register Page
 
-// const loginBtn = document.querySelector(".loginBtn");
-// const loginInput = document.querySelectorAll(".loginInput");
+const registerInput = document.querySelectorAll(".registerInput");
+const registerBtn = document.querySelector("#registerBtn");
 
-// const userDetails = JSON.parse(localStorage.getItem("detailsOfUser")) || [{}];
-// const savedUserEmail = userDetails.find(e => e.email == LogUserEmail.value);
-// const savedUserPass = userDetails.find(p => p.password == logUserPass.value );
+registerBtn.addEventListener("click", () => {
+  let isValid = true;
 
-// registerInput = document.querySelectorAll(".registerInput");
-// registerBtn = document.querySelector("#registerBtn");
+  registerInput.forEach((element) => {
+    const registerErrorMessage = element.getAttribute("data-register-error");
+    const registerErrorId = element.getAttribute("data-register-error-id");
+    const registerErrorElement = document.querySelector(`#${registerErrorId}`);
 
-// Logic for the login Page
+    if (element.value.trim() == "") {
+      isValid = false;
+      registerErrorElement.textContent = registerErrorMessage;
+    } else {
+      registerErrorElement.textContent = "";
+    }
+  });
 
-// loginBtn.addEventListener("click", () => {
+  if (isValid) {
+    const userDetails = JSON.parse(localStorage.getItem("detailsOfUser")) || [];
 
-//   let isFilled = true;
+    const regUserEmail = document.querySelector("#registerEmail").value.trim();
+    const regUserPassword = document
+      .querySelector("#registerPassword")
+      .value.trim();
 
-//   loginInput.forEach((element) => {
+    const existingUser = userDetails.find((e) => e.email == regUserEmail);
 
-//   const loginDataError = element.getAttribute("data-login-error");
-//   const loginDataErrorId = element.getAttribute("data-login-error-id");
-//   const loginErrorElement = document.querySelector(`#${loginDataErrorId}`);
+    if (existingUser) {
+      alert("Already registered! Please login.");
+    } else {
+      const newUser = {
+        email: regUserEmail,
+        password: regUserPassword,
+      };
 
-//     if (element.value.trim() == "") {
-//       isFilled = false;
-//       loginErrorElement.textContent = loginDataError;
-//     } else {
-//       loginErrorElement.textContent = "";
+      userDetails.push(newUser);
 
-//       let isContain = true;
+      localStorage.setItem("detailsOfUser", JSON.stringify(userDetails));
 
-//         LogUserEmail = document.querySelector("#logEmail");
-//         logUserPass = document.querySelector("#logPassword");
+      alert("Registered Successfully");
 
-//         if(LogUserEmail == savedUserEmail ){
-//           isContain = true;
-//         }else{
-//           isContain = false;
-//           alert("User not found.")
-//         }
+      // To redirect to Login Page
 
-//         if(logUserPass == savedUserPass){
-//           isContain = true;
-//         }else{
-//           isContain = false;
-//           alert("Password Wrong.")
-//         }
+      const registerPage = document.querySelector(".registerForm");
+      const loginPage = document.querySelector(".loginForm");
 
-//     }
-
-//     if (isFilled) {
-//       alert("Login Successfull.");
-//     } else {
-//       alert("Login Failed.");
-//     }
-
-//     if(isContain){
-//       alert("You are logged in.")
-//     }
-
-//   });
-// });
+      registerPage.style.display = "none";
+      loginPage.style.display = "block";
+    }
+  }
+});

@@ -35,13 +35,13 @@
             </div>
 
             <div class="authFields">
-                <label for="email">Email</label>
+                <label for="logEmail">Email</label>
                 <input id="logEmail" class="authInput loginInput" type="email" required placeholder="Enter your email"
                     data-login-error="Please enter your email" data-login-error-id="loginEmailError">
                 <p class="error" id="loginEmailError"></p>
 
 
-                <label for="password">Password</label>
+                <label for="logPassword">Password</label>
                 <input id="logPassword" class="authInput loginInput" type="password" required data-login-error="Please enter your password"
                     data-login-error-id="loginPasswordError" placeholder="Enter your password">
                 <p class="error" id="loginPasswordError"></p>
@@ -77,13 +77,13 @@
             </div>
 
             <div class="authFields">
-                <label for="regEmail">Email</label>
-                <input class="authInput registerInput registerEmail" type="email" required data-register-error-id="regErrorEmail"
-                    placeholder="Enter your email" data-register-error="please enter your email">
+                <label for="registerEmail">Email</label>
+                <input id="registerEmail" class="authInput registerInput" type="email" required data-register-error-id="regEmailError"
+                    placeholder="Enter your email" data-register-error="Please enter your email">
                 <p class="error" id="regEmailError"></p>
 
-                <label for="regPassword">Password</label>
-                <input class="authInput registerInput registerPass" type="password" required placeholder="Create a password"
+                <label for="registerPassword">Password</label>
+                <input id="registerPassword" class="authInput registerInput" type="password" required placeholder="Create a password"
                     data-register-error="Please create your password" data-register-error-id="regPassError">
                 <p class="error" id="regPassError"></p>
             </div>
