@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="auth.css">
     <link rel="icon" href="Resources\favicon.webp">
     <!-- <script src="common.js" defer></script> -->
-     <script src="auth.js" defer></script>
+    <script src="auth.js" defer></script>
 </head>
 
 <body>
@@ -42,8 +42,9 @@
 
 
                 <label for="logPassword">Password</label>
-                <input id="logPassword" class="authInput loginInput" type="password" required data-login-error="Please enter your password"
-                    data-login-error-id="loginPasswordError" placeholder="Enter your password">
+                <input id="logPassword" class="authInput loginInput" type="password" required
+                    data-login-error="Please enter your password" data-login-error-id="loginPasswordError"
+                    placeholder="Enter your password">
                 <p class="error" id="loginPasswordError"></p>
 
             </div>
@@ -53,21 +54,21 @@
                 <p>Login</p>
             </button>
 
-           <div class="registerText">
-            <p>Don't have account?
-                <span class="goToRegister">Register here</span>
-            </p>
-           </div>
+            <div class="registerText">
+                <p>Don't have account?
+                    <span class="goToRegister">Register here</span>
+                </p>
+            </div>
         </div>
 
         <!-- Register Form -->
 
-        <div class="registerForm" style="display: none;">        
-        <!-- <div class="registerForm">         -->
+        <div class="registerForm" style="display: none;">
+            <!-- <div class="registerForm">         -->
 
             <div class="authTop">
                 <div class="registerIcon">
-                <i class="fa-solid fa-user-plus openBracket"></i>
+                    <i class="fa-solid fa-user-plus openBracket"></i>
                 </div>
 
                 <div class="goToRegisterText">
@@ -78,13 +79,15 @@
 
             <div class="authFields">
                 <label for="registerEmail">Email</label>
-                <input id="registerEmail" class="authInput registerInput" type="email" required data-register-error-id="regEmailError"
-                    placeholder="Enter your email" data-register-error="Please enter your email">
+                <input id="registerEmail" class="authInput registerInput" type="email" required
+                    data-register-error-id="regEmailError" placeholder="Enter your email"
+                    data-register-error="Please enter your email">
                 <p class="error" id="regEmailError"></p>
 
                 <label for="registerPassword">Password</label>
-                <input id="registerPassword" class="authInput registerInput" type="password" required placeholder="Create a password"
-                    data-register-error="Please create your password" data-register-error-id="regPassError">
+                <input id="registerPassword" class="authInput registerInput" type="password" required
+                    placeholder="Create a password" data-register-error="Please create your password"
+                    data-register-error-id="regPassError">
                 <p class="error" id="regPassError"></p>
             </div>
 
