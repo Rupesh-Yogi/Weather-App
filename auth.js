@@ -63,6 +63,7 @@ loginBtn.addEventListener("click", () => {
     if (!savedUserEmail) {
       alert("User donot found. Please register first!");
     } else if (savedUserEmail.password == userEnteredPass) {
+      localStorage.setItem("isLoggedIn", "true");
       alert("Login Successfull");
       document.location.href = "index.html";
     } else {

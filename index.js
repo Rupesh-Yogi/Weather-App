@@ -1,3 +1,13 @@
+
+// For redirecting to authentication Page
+
+const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+if(!isLoggedIn){
+  window.location.href = "auth.html";
+}
+
+
 // Fetches API
 
 const API_KEY = "4a37fc286f3cf9d329d053c8bcea3f3c";
